@@ -3,10 +3,10 @@
 Datamodellering og opprettelse og spørring mot database
 
 ## Medlemmer
-Eskil Nilsen
-Hans Jørgen Moger Dokken
-Adrian de Grijs Fjellstad
-Ola Glenna Grostølen
+Eskil Nilsen,
+Hans Jørgen Moger Dokken,
+Adrian de Grijs Fjellstad,
+Ola Glenna Grostølen,
 Gustav Grimsbø
 
 [Datamodell](Arbeidskrav.pdf)
