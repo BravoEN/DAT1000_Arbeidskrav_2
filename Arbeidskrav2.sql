@@ -1,0 +1,53 @@
+DROP SCHEMA IF EXISTS dogstore;
+CREATE SCHEMA dogstore;
+USE dogstore;
+
+-- Create table runde(1)
+CREATE TABLE Senter
+(
+SenterID CHAR(4),
+Senternavn CHAR(20) NOT NULL,
+CONSTRAINT SenterPK PRIMARY KEY(SenterID)
+);
+
+CREATE TABLE Kunde
+(
+Mobilnr CHAR(11),
+Fornavn CHAR(20) NOT NULL,
+Etternavn CHAR(20) NOT NULL,
+Betalingskortnr CHAR(16) NOT NULL,
+CONSTRAINT KundePK PRIMARY KEY(Mobilnr)
+);
+
+-- Create table runde(2)
+CREATE TABLE Boks
+(
+BoksID CHAR(4),
+SenterID CHAR(4),
+CONSTRAINT BoksPK PRIMARY KEY(BoksID),
+CONSTRAINT BoksSenterFK FOREIGN KEY(SenterID) REFERENCES Senter(SenterID)
+);
+
+CREATE TABLE Hund
+(
+HundeID CHAR(4),
+Hundenavn CHAR(20) NOT NULL,
+Rase CHAR(20),
+Eier CHAR(11),
+Startdato DATE NOT NULL,
+CONSTRAINT HundPK PRIMARY KEY(HundeID),
+CONSTRAINT HundKundeFK FOREIGN KEY(Eier) REFERENCES Kunde(Mobilnr)
+);
+
+-- CREATE TABLE RUNDE(3)
+CREATE TABLE Utleie
+(
+BoksID CHAR(4),
+Starttidspkt TIMESTAMP,
+HundeID CHAR(4),
+Sluttidspkt TIMESTAMP,
+Belop DECIMAL,
+CONSTRAINT UtleiePK PRIMARY KEY(BoksID, Starttidspkt),
+CONSTRAINT UtleieBoksFK FOREIGN KEY(BoksID) REFERENCES Boks(BoksID),
+CONSTRAINT UtleieHundFK FOREIGN KEY(HundeID) REFERENCES Hund(HundeID)
+);
