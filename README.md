@@ -9,6 +9,4 @@ Adrian de Grijs Fjellstad
 Ola Glenna Grostølen
 Gustav Grimsbø
 
-### Datamodell
-
-[text](Arbeidskrav.pdf)
+[Datamodell](Arbeidskrav.pdf)
